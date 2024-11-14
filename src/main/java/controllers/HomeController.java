@@ -39,18 +39,16 @@ public class HomeController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/s/register.fxml"));
             Parent registerRoot = fxmlLoader.load();
 
-            // Get the current stage (window) using any control on the current scene
+            // Get the current stage
             Stage currentStage = (Stage) createAccountButton.getScene().getWindow();
 
-            // Set the new scene on the current stage
+            // Set the new scene
             currentStage.setScene(new Scene(registerRoot));
         } catch (IOException e) {
             showAlert("Error loading registration page: " + e.getMessage());
             e.printStackTrace();
         }
     }
-
-
 
 
     private void handleViewArticles() {
@@ -75,17 +73,16 @@ public class HomeController {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/s/login.fxml"));
             Parent loginRoot = fxmlLoader.load();
 
-            // Get the current stage (window) using any control on the current scene
+            // Get the current stage
             Stage currentStage = (Stage) logInButton.getScene().getWindow();
 
-            // Set the new scene on the current stage
+            // Set the new scene
             currentStage.setScene(new Scene(loginRoot));
         } catch (IOException e) {
             showAlert("Error loading login page: " + e.getMessage());
             e.printStackTrace();
         }
     }
-
 
     private void showAlert(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
